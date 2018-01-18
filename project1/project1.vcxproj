@@ -147,17 +147,25 @@
   <ItemGroup>
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ObjectManager.cpp" />
+    <ClCompile Include="OutputManager.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="ScriptManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Background.h" />
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="InputManager.h" />
     <ClInclude Include="ObjectManager.h" />
     <ClInclude Include="GameObject.h" />
-    <ClInclude Include="Input.h" />
     <ClInclude Include="OutputManager.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Player2.h" />
+    <ClInclude Include="ScriptManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

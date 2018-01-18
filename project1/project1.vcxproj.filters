@@ -19,6 +19,18 @@
     <Filter Include="Заголовочные файлы\Objects">
       <UniqueIdentifier>{c2e7c4a3-a202-407f-bdfc-e6080e5f67be}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы исходного кода\Managers">
+      <UniqueIdentifier>{385700bb-fe62-4521-abe6-0c34f3a2e132}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Objects">
+      <UniqueIdentifier>{baaa9144-19e8-4c5a-82e6-cab9e8d3b50f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Game">
+      <UniqueIdentifier>{c0d4dcf1-21ad-46ea-885d-9b40ad5c359a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\StandartObjects">
+      <UniqueIdentifier>{71a01b63-fce0-47e6-8dc6-c3953d0c5bf6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -30,8 +42,20 @@
     <ClCompile Include="Component.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
-    <ClCompile Include="Input.cpp">
-      <Filter>Файлы исходного кода</Filter>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Файлы исходного кода\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="OutputManager.cpp">
+      <Filter>Файлы исходного кода\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectManager.cpp">
+      <Filter>Файлы исходного кода\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Файлы исходного кода\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptManager.cpp">
+      <Filter>Файлы исходного кода\Managers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -41,20 +65,32 @@
     <ClInclude Include="Component.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="Input.h">
-      <Filter>Заголовочные файлы</Filter>
-    </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Заголовочные файлы\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Заголовочные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="OutputManager.h">
+    <ClInclude Include="InputManager.h">
       <Filter>Заголовочные файлы\Managers</Filter>
     </ClInclude>
     <ClInclude Include="ObjectManager.h">
       <Filter>Заголовочные файлы\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="OutputManager.h">
+      <Filter>Заголовочные файлы\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptManager.h">
+      <Filter>Заголовочные файлы\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Заголовочные файлы\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Заголовочные файлы\StandartObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Player2.h">
+      <Filter>Заголовочные файлы\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Background.h">
+      <Filter>Заголовочные файлы\Objects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

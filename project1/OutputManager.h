@@ -1,11 +1,15 @@
 #pragma once
 
-#include <SFML/System.hpp>
 #include <SFML/Window.hpp>
-#include <map>
+#include <SFML/Graphics.hpp>
 
+#include "ObjectManager.h"
 
 class OutputManager {
-	sf::Window* window;
+	sf::RenderWindow* window;
+	ObjectManager& objectManager = ObjectManager::Instance();
 
+public:
+	void init(sf::RenderWindow* _window) { window = _window; };
+	void update();
 };

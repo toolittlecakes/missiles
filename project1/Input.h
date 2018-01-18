@@ -2,14 +2,15 @@
 
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
 #include <map>
 
 
 class Input {
-	static sf::Window* window;
+	static sf::RenderWindow* window;
 	static std::map<sf::Keyboard::Key, bool> keys;
 public:
-	static void init(sf::Window* _win) { window = _win ;};
+	static void init(sf::RenderWindow* _win) { window = _win ;};
 	static void refresh() {
 		sf::Event event;
 		
