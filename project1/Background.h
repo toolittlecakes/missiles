@@ -6,8 +6,11 @@ public:
 	BackgroundScript(GameObject *_object) : Script(_object) {}
 
 	virtual void update() {
+		GameObject* player = objectManager.getObject<Player>();
+		Transform* playerTr = player->getComponent<Transform>();
 		Transform* tr = getComponent<Transform>();
-		tr->x += input.getAxisX();
+		tr->x = playerTr->x;
+		tr->y = playerTr->y;
 	}
 
 	virtual ~BackgroundScript() {}
@@ -15,7 +18,7 @@ public:
 
 class Background : public GameObject {
 public:
-	Background() : GameObject() {
+	Background(int _id) : GameObject(_id) {
 		assign<Transform>(0, 0);
 		assign<BackgroundScript>();
 		assign<Image>("images/Background.png");

@@ -13,7 +13,6 @@ void OutputManager::update()
 	GameObject* camera = objectManager.getObject<Camera>();
 	Transform* cameraTransform = camera->getComponent<Transform>();
 
-	std::cout << cameraTransform->x << ' ' << cameraTransform->y << std::endl;;
 	
 	sf::View view = window->getView();
 	view.setCenter(cameraTransform->x, cameraTransform->y);
@@ -26,6 +25,7 @@ void OutputManager::update()
 		
 		if (image != nullptr && transform != nullptr) {
 			image->getSprite().setPosition(transform->x, transform->y);
+			image->getSprite().setRotation(transform->rotation);
 			window->draw(image->getSprite());
 		}
 	}

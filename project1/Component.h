@@ -7,13 +7,13 @@ class GameObject;
 class Component {
 	GameObject* object;
 protected:
+	int getId();
 	template<typename T>
 	T* getComponent() {
 		return object->getComponent<T>();
 	}
 public:
 	Component(GameObject * _object) : object(_object) {};
-	
 	
 	virtual ~Component() {};
 };
@@ -33,12 +33,14 @@ class Image : public Component {
 	sf::Texture texture;//создаем объект Texture (текстура)
 	sf::Sprite sprite;//создаем объект Sprite(спрайт)
 public:
-	Image(GameObject* _object, std::string filename, float start_angle = 0) : Component(_object) {
+	Image(GameObject* _object, std::string filename, float scale = 1) : Component(_object) {
+		sf::Image image;
+		image.loadFromFile(filename);
 		texture.loadFromFile(filename);//загружаем картинку
 		texture.setSmooth(true);
 		sprite.setTexture(texture);//передаём в него объект Texture (текстуры)
-		sprite.setOrigin(static_cast<float>(texture.getSize().x/2), static_cast<float>(texture.getSize().y/2));
-		sprite.rotate(start_angle);
+		sprite.setOrigin(static_cast<float>(texture.getSize().x/2), static_cast<float>(texture.getSize().y/2));	
+		sprite.setScale(scale, scale);
 	}
 	virtual sf::Texture& getTexture();
 	virtual sf::Sprite& getSprite();

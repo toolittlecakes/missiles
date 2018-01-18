@@ -157,6 +157,8 @@
   <ItemGroup>
     <ClInclude Include="Background.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Cloud.h" />
+    <ClInclude Include="CloudSystem.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="InputManager.h" />
@@ -164,7 +166,8 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="OutputManager.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="Player2.h" />
+    <ClInclude Include="Rocket1.h" />
+    <ClInclude Include="RocketSystem.h" />
     <ClInclude Include="ScriptManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

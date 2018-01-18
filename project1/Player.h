@@ -3,14 +3,19 @@
 #include "GameObject.h"
 class PlayerScript : public Script {
 public:
-	PlayerScript(GameObject *_object) : Script(_object) {
-	
-	}
+	PlayerScript(GameObject *_object) : Script(_object) {}
 
+
+	float speed = 10;
+	float rotationSpeed = 30 / speed;
 	virtual void update() {
 		Transform* tr = getComponent<Transform>();
 		
-		input.getAxisX();
+		tr->x += sinf(tr->rotation / 180 * 3.1415) * speed;
+		tr->y -= cosf(tr->rotation / 180 * 3.1415) * speed;
+
+
+		tr->rotation += input.getAxisX() * rotationSpeed;
 
 
 	}
@@ -20,10 +25,10 @@ public:
 
 class Player : public GameObject {
 public:
-	Player() : GameObject() {
+	Player(int _id) : GameObject(_id) {
 		assign<Transform>(0,0);
 		assign<PlayerScript>();
-		assign<Image>("images/Player.png", -45);
+		assign<Image>("images/Player.png", 0.2);
 	}
 	~Player() {};
 };

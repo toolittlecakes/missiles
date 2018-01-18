@@ -86,10 +86,19 @@
     <ClInclude Include="Camera.h">
       <Filter>Заголовочные файлы\StandartObjects</Filter>
     </ClInclude>
-    <ClInclude Include="Player2.h">
+    <ClInclude Include="Background.h">
       <Filter>Заголовочные файлы\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Background.h">
+    <ClInclude Include="Cloud.h">
+      <Filter>Заголовочные файлы\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Rocket1.h">
+      <Filter>Заголовочные файлы\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="CloudSystem.h">
+      <Filter>Заголовочные файлы\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="RocketSystem.h">
       <Filter>Заголовочные файлы\Objects</Filter>
     </ClInclude>
   </ItemGroup>

@@ -10,6 +10,10 @@ class OutputManager {
 	ObjectManager& objectManager = ObjectManager::Instance();
 
 public:
-	void init(sf::RenderWindow* _window) { window = _window; };
+	void init(sf::RenderWindow* _window) { window = _window;
+	sf::View view = window->getView();
+	view.zoom(2);
+	window->setView(view);
+	};
 	void update();
 };

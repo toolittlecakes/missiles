@@ -15,11 +15,11 @@ class Game {
 		InManager.update();
 		ScrManager.update();
 		OutManager.update();
-
+		ObjManager.update();
 	}
 public:
 	void init() {
-		window.create(sf::VideoMode(900, 600), "Missilies", sf::Style::Fullscreen);
+		window.create(sf::VideoMode(800, 800), "Missilies"/*, sf::Style::Fullscreen*/);
 		
 		ObjManager.init();
 		InManager.init(&window);

@@ -7,6 +7,10 @@ class GameObject {
 	std::vector<Component*> components;
 	int id;
 public:
+	GameObject(int _id) : id(_id) {};
+	
+	int getId() { return id; }
+
 	template <typename T>
 	T* getComponent() {
 		for (auto it = components.begin(); it != components.end(); ++it) {
