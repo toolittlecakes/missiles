@@ -18,9 +18,13 @@ void ObjectManager::init()
 	create<Camera>();
 	
 	//user objects
-	create<CloudSustem>();
+
 	create<Background>();
+	
+	create<CloudSystem>();
 	create<Player>();
+	create<RocketSystem>();
+
 }
 
 void ObjectManager::clear(int id)
@@ -32,9 +36,12 @@ void ObjectManager::update()
 {
 	for (int i = objectToClear.size(); i > 0; i--) {
 		int id = objectToClear.back();
-		for (auto it = objects.begin(); it != objects.end(); ++it) {
+		for (auto it = objects.begin(); it != objects.end();) {
 			if ((*it)->getId() == id) {
 				it = objects.erase(it);
+			}
+			else {
+				++it;
 			}
 		}
 		objectToClear.pop_back();

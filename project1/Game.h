@@ -4,6 +4,7 @@
 #include "OutputManager.h"
 #include "InputManager.h"
 #include "ScriptManager.h"
+#include "CollisionManager.h"
 
 class Game {
 	sf::RenderWindow window;
@@ -11,20 +12,26 @@ class Game {
 	InputManager& InManager = InputManager::Instance();
 	OutputManager OutManager;
 	ScriptManager ScrManager;
+	CollisionManager ColManager;
 	void update() {
 		InManager.update();
+		ColManager.update();
 		ScrManager.update();
 		OutManager.update();
 		ObjManager.update();
+
 	}
 public:
 	void init() {
+		srand(time(nullptr));
 		window.create(sf::VideoMode(800, 800), "Missilies"/*, sf::Style::Fullscreen*/);
 		
 		ObjManager.init();
 		InManager.init(&window);
 		
+		
 		ScrManager.init();
+		ColManager.init();
 		OutManager.init(&window);
 
 	}

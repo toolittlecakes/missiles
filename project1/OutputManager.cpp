@@ -23,7 +23,7 @@ void OutputManager::update()
 		Image* image = (*it)->getComponent<Image>();
 		Transform* transform = (*it)->getComponent<Transform>();
 		
-		if (image != nullptr && transform != nullptr) {
+		if (image != nullptr && transform != nullptr && image->visible) {
 			image->getSprite().setPosition(transform->x, transform->y);
 			image->getSprite().setRotation(transform->rotation);
 			window->draw(image->getSprite());

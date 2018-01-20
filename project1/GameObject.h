@@ -23,5 +23,12 @@ public:
 	void assign(Args&& ...args) {
 		components.push_back(new T(this, args...));
 	}
+	template <typename T>
+	void unAssign() {
+		for (auto it = components.begin(); it != components.end(); ++it) {
+			if (dynamic_cast<T*>(*it) != nullptr) { components.erase(it); return; }
+		}
+		return;
+	}
 	virtual ~GameObject() {};
 };

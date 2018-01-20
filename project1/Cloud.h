@@ -9,6 +9,7 @@ public:
 
 	virtual void update() {
 		GameObject* player = objectManager.getObject<Player>();
+		if (player == nullptr) { return; }
 		Transform* playerTr = player->getComponent<Transform>();
 		Transform* tr = getComponent<Transform>();
 		if ((tr->x - playerTr->x) * (tr->x - playerTr->x) + (tr->y - playerTr->y) * (tr->y - playerTr->y) > 9000000) {

@@ -29,10 +29,11 @@ public:
 };
 
 class Image : public Component {
-	bool visible = 1;
+	
 	sf::Texture texture;//создаем объект Texture (текстура)
 	sf::Sprite sprite;//создаем объект Sprite(спрайт)
 public:
+	bool visible = 1;
 	Image(GameObject* _object, std::string filename, float scale = 1) : Component(_object) {
 		sf::Image image;
 		image.loadFromFile(filename);
@@ -45,6 +46,19 @@ public:
 	virtual sf::Texture& getTexture();
 	virtual sf::Sprite& getSprite();
 	virtual ~Image() {};
+};
+
+class Collide : public Component {
+	std::vector<GameObject*> collided;
+	float collideRadix;
+public:
+	Collide(GameObject* _object, float _collideRadix) : Component(_object), collideRadix(_collideRadix) {}
+	void addObject(GameObject* newObject) { collided.push_back(newObject); }
+	void clear() { collided.clear(); }
+	float getRadix() { return collideRadix; }
+	std::vector<GameObject*>& getCollision() { return collided; }
+
+	virtual ~Collide() {};
 };
 
 class Script : public Component {

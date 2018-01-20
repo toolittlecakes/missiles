@@ -57,6 +57,9 @@
     <ClCompile Include="ScriptManager.cpp">
       <Filter>Файлы исходного кода\Managers</Filter>
     </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>Файлы исходного кода\Managers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObject.h">
@@ -100,6 +103,9 @@
     </ClInclude>
     <ClInclude Include="RocketSystem.h">
       <Filter>Заголовочные файлы\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionManager.h">
+      <Filter>Заголовочные файлы\Managers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

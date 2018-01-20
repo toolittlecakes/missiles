@@ -18,7 +18,7 @@ public:
 
 	template <typename T>
 	std::vector<GameObject*> getObjects() {
-		std::vector<GameObject*> result;
+		std::vector<GameObject*> result = nullptr;;
 		for (auto it = objects.begin(); it != objects.end(); ++it) {
 			if (dynamic_cast<T*>(*it) != nullptr) {
 				result.push_back(*it);

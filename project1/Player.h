@@ -1,13 +1,16 @@
 #pragma once
 #include "Component.h"
 #include "GameObject.h"
+#include <iostream>
+class Camera;
+
 class PlayerScript : public Script {
 public:
 	PlayerScript(GameObject *_object) : Script(_object) {}
 
 
 	float speed = 10;
-	float rotationSpeed = 30 / speed;
+	float rotationSpeed = 40 / speed;
 	virtual void update() {
 		Transform* tr = getComponent<Transform>();
 		
@@ -17,7 +20,12 @@ public:
 
 		tr->rotation += input.getAxisX() * rotationSpeed;
 
-
+		if (!getComponent<Collide>()->getCollision().empty()) {
+			objectManager.clear(getId());
+			
+			/*getComponent<Image>()->visible = 0;
+			speed = 0;*/
+		}
 	}
 
 	virtual ~PlayerScript() {}
@@ -29,6 +37,7 @@ public:
 		assign<Transform>(0,0);
 		assign<PlayerScript>();
 		assign<Image>("images/Player.png", 0.2);
+		assign<Collide>(15);
 	}
 	~Player() {};
 };

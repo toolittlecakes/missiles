@@ -5,14 +5,15 @@
 
 class Cloud;
 class Player;
-class CloudSystemObjectScript : public Script {
+class CloudSystemScript : public Script {
 public:
-	CloudSystemObjectScript(GameObject *_object) : Script(_object) {}
+	CloudSystemScript(GameObject *_object) : Script(_object) {}
 
 	time_t timeCloud = 1;
 	sf::Clock clockCloud;
 	virtual void update() {
 		GameObject* player = objectManager.getObject<Player>();
+		if (player == nullptr) { return; }
 		Transform* trPlayer = player->getComponent<Transform>();
 		
 		if (clockCloud.getElapsedTime().asSeconds() > timeCloud) {
@@ -26,13 +27,13 @@ public:
 		}
 	}
 
-	virtual ~CloudSystemObjectScript() {}
+	virtual ~CloudSystemScript() {}
 };
 
-class CloudSystemObject : public GameObject {
+class CloudSystem : public GameObject {
 public:
-	CloudSystemObject(int _id) : GameObject(_id) {
-		assign<CloudSystemObjectScript>();
+	CloudSystem(int _id) : GameObject(_id) {
+		assign<CloudSystemScript>();
 	}
-	~CloudSystemObject() {};
+	~CloudSystem() {};
 };

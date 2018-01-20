@@ -9,6 +9,7 @@ public:
 
 	void update() {
 		GameObject* player = objectManager.getObject<Player>();
+		if (player == nullptr) { return; }
 		Transform* playerTr = player->getComponent<Transform>();
 		Transform* tr = getComponent<Transform>();
 		tr->x = playerTr->x + 15 * sinf(playerTr->rotation /180 * 3.1415);
